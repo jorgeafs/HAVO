@@ -15,7 +15,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HAVO", "HAVO\HAVO\HAVO.shpr
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		HAVO\HAVO\HAVO.projitems*{ec410387-7dfa-40d0-966b-a7c05306d0ef}*SharedItemsImports = 4
+		HAVO\HAVO\HAVO.projitems*{0cacb38b-a5ed-405c-8e08-9209df0cf19f}*SharedItemsImports = 4
+		HAVO\HAVO\HAVO.projitems*{4e0c759e-14a6-4c01-ae5d-656919e426bc}*SharedItemsImports = 4
 		HAVO\HAVO\HAVO.projitems*{b97befc3-bbcb-43a6-adfa-45518bd767c8}*SharedItemsImports = 13
+		HAVO\HAVO\HAVO.projitems*{c8700861-3a90-4c2a-8cba-89e4638055cc}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
