@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using HAVO.Models;
 
 using Xamarin.Forms;
 
@@ -19,11 +20,15 @@ namespace HAVO.Views
             this.SetBinding(ContentPage.TitleProperty, title);
 
             var nuevaLista = new Button { Text = listaNueva };
-            nuevaLista.Clicked
+            //nuevaLista.Clicked += (sender, e) =>
+            //{
+            //    var lista = new Lista();
+
+            //}
 			Content = new StackLayout {
 				Children = {
-					new Label { Text = "Hello ContentPage" }
-				}
+
+                }
 			};
 		}
 	}

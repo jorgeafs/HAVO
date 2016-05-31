@@ -15,11 +15,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lista.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TaskPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
   </ItemGroup>
 </Project>

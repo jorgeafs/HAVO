@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using HAVO.Data;
 using Xamarin.Forms;
 
 namespace HAVO
 {
 	public class App : Application
 	{
-		public App ()
+        static DatabaseHAVO database;
+        public static DatabaseHAVO Database
+        {
+            get
+            {
+                database = database ?? new DatabaseHAVO();
+                return database;
+            }
+        }
+        public App ()
 		{
 			// The root page of your application
 			MainPage = new ContentPage {
