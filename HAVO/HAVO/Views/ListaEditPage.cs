@@ -13,8 +13,6 @@ namespace HAVO.Views
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
 
-            NavigationPage.SetHasNavigationBar(this, true);
-
             var saveButton = new Button { Text = "Save" };
             saveButton.IsEnabled = false;
 
@@ -29,6 +27,7 @@ namespace HAVO.Views
                 saveButton.IsEnabled = true;
                 createTaskButton.IsEnabled = true;
             };
+
             var detailLabel = new Label { Text = "Detail" };
             var detailEntry = new Entry();
             detailEntry.SetBinding(Entry.TextProperty, "Detail");

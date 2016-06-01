@@ -9,13 +9,22 @@ namespace HAVO.Views
     {
         public ItemCell()
         {
-            var label = new Label
+            var title = new Label
             {
-                VerticalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Start,
                 HorizontalOptions = LayoutOptions.StartAndExpand
             };
 
-            label.SetBinding(Label.TextProperty, "Name");
+            title.SetBinding(Label.TextProperty, "Title");
+
+            var detail = new Label
+            {
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Start,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+
+            detail.SetBinding(Label.TextProperty, "Detail");
 
             var tick = new Image
             {
@@ -30,7 +39,7 @@ namespace HAVO.Views
                 Padding = new Thickness(20, 0, 20, 0),
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Children = { label, tick }
+                Children = { title, detail, tick }
             };
 
             View = layout;

@@ -23,6 +23,11 @@ namespace HAVO.Views
             titleEntry.SetBinding(Entry.TextProperty, "Title");
             titleEntry.TextChanged += (o, e) => saveButton.IsEnabled = true;
 
+            var detailLabel = new Label { Text = "Detail" };
+            var detailEntry = new Entry();
+            detailEntry.SetBinding(Entry.TextProperty, "Detail");
+            detailEntry.TextChanged += (o, e) => saveButton.IsEnabled = true;
+
             var criteriaLabel = new Label { Text = "Criteria" };
             var criteriaEntry = new Entry();
             criteriaEntry.SetBinding(Entry.TextProperty, "Criteria");
@@ -62,6 +67,7 @@ namespace HAVO.Views
                 Padding = new Thickness(20),
                 Children = {
                     titleLabel, titleEntry,
+                    detailLabel, detailEntry,
                     criteriaLabel, criteriaEntry,
                     placementLabel, placementEntry,
                     saveButton, deleteButton, cancelButton
