@@ -20,12 +20,13 @@ namespace HAVO.Views
             this.SetBinding(ContentPage.TitleProperty, title);
 
             var nuevaLista = new Button { Text = listaNueva };
-            //nuevaLista.Clicked += (sender, e) =>
-            //{
-            //    var lista = new Lista();
+            nuevaLista.Clicked += (sender, e) =>
+            {
+                var lista = new Lista();
+                lista.UserID;
+            };
 
-            //}
-			Content = new StackLayout {
+            Content = new StackLayout {
 				Children = {
 
                 }

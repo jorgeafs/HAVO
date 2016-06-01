@@ -13,6 +13,7 @@ namespace HAVO.Models
         public int ID { get; set; }
         public int UserID { get; set; }
         public String Title { get; set; }
+        public String Detail { get; set; }
         public String Project { get; set; }
         public String Address { get; set; }
         public String BIM { get; set; }
