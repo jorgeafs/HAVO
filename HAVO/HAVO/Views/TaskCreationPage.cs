@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace HAVO.Views
 {
-    public class TaskPage : ContentPage
+    public class TaskCreationPage : ContentPage
     {
-        public TaskPage(int listaID)
+        public TaskCreationPage(int listaID)
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
 
@@ -40,8 +40,13 @@ namespace HAVO.Views
 
             saveButton.Clicked += (sender, e) =>
             {
-                var task = (Task)BindingContext;
+                var task = new Task();
                 task.created = DateTime.Now;
+                task.Criteria = criteriaEntry.Text;
+                task.Detail = detailEntry.Text;
+                task.ListID = listaID;
+                task.Placement = placementEntry.Text;
+                task.Title = titleEntry.Text;
                 App.Database.SaveTask(task);
                 Navigation.PopAsync();
             };

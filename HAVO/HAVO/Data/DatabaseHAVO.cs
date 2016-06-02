@@ -85,19 +85,19 @@ namespace HAVO.Data
             }
         }
 
-        public IEnumerable<Task> getTasks()
+        public IEnumerable<Task> getTasks(int listaId)
         {
             lock (locker)
             {
-                return (from task in database.Table<Task>() select task).ToList();
+                return (from task in database.Table<Task>() where task.ListID == listaId select task).ToList();
             }
         }
 
-        public Task getTask(int id)
+        public Task getTask(int taskId)
         {
             lock (locker)
             {
-                return database.Table<Task>().FirstOrDefault(x => x.ID == id);
+                return database.Table<Task>().FirstOrDefault(x => x.ID == taskId);
             }
         }
         public int SaveTask(Task task)

@@ -59,9 +59,10 @@ namespace HAVO.Views
             createTaskButton.Clicked += (sender, e) =>
             {
                 var lista = (Lista)BindingContext;
-                var listingPage = new ListingTasks(0);
                 lista.Created = DateTime.Now;
                 App.Database.SaveLista(lista);
+                lista = (from listas in App.Database.getListas() select listas).LastOrDefault<Lista>();
+                var listingPage = new ListingTasks(lista.ID);
                 listingPage.BindingContext = lista;
                 Navigation.PushAsync(listingPage);
             };
