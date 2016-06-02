@@ -7,7 +7,7 @@ using HAVO.Models;
 
 namespace HAVO.Data
 {
-    class DatabaseHAVO
+    public class DatabaseHAVO
     {
 
         static object locker = new object();

@@ -13,6 +13,8 @@ namespace HAVO.Views
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
 
+            NavigationPage.SetHasNavigationBar(this, true);
+
             var saveButton = new Button { Text = "Save" };
             saveButton.IsEnabled = false;
 
@@ -69,8 +71,7 @@ namespace HAVO.Views
             {
                 Navigation.PopAsync();
             };
-            Content = new StackLayout
-            {
+            Content = new StackLayout {
                 VerticalOptions = LayoutOptions.StartAndExpand,
                 Padding = new Thickness(20),
                 Children = {

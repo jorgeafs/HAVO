@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using HAVO.Data;
+using HAVO.Views;
 using Xamarin.Forms;
 
 namespace HAVO
@@ -19,34 +20,16 @@ namespace HAVO
             }
         }
         public App ()
-		{
-			// The root page of your application
-			MainPage = new ContentPage {
-				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-				}
-			};
-		}
+        {
+            Resources = new ResourceDictionary();
+            Resources.Add("primaryGreen", Color.FromHex("91CA47"));
+            Resources.Add("primaryDarkGreen", Color.FromHex("6FA22E"));
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            var nav = new NavigationPage(new MainView());
+            nav.BarBackgroundColor = (Color)App.Current.Resources["primaryGreen"];
+            nav.BarTextColor = Color.White;
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
-
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
+            MainPage = nav;
+        }
 	}
 }

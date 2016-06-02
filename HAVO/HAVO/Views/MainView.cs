@@ -23,12 +23,15 @@ namespace HAVO.Views
             nuevaLista.Clicked += (sender, e) =>
             {
                 var lista = new Lista();
-                lista.UserID;
+                var listaCreatePage = new ListaCreatePage();
+                ///lista.UserID;
+                listaCreatePage.BindingContext = lista;
+                Navigation.PushAsync(listaCreatePage);
             };
 
             Content = new StackLayout {
 				Children = {
-
+                    nuevaLista,
                 }
 			};
 		}

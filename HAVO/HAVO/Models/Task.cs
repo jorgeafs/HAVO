@@ -3,7 +3,7 @@ using SQLite;
 
 namespace HAVO.Models
 {
-    class Task
+    public class Task
     {
         public Task ()
         {
