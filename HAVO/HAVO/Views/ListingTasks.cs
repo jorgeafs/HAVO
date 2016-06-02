@@ -7,10 +7,10 @@ using Xamarin.Forms;
 
 namespace HAVO.Views
 {
-    public class ListingPage<T> : ContentPage
+    public class ListingTasks : ContentPage
     {
         ListView listView;
-        public ListingPage(int id)
+        public ListingTasks(int id)
         {
             Title = "Todo";
 
@@ -20,6 +20,13 @@ namespace HAVO.Views
             {
                 RowHeight = 40,
                 ItemTemplate = new DataTemplate(typeof(ItemCell))
+            };
+
+            listView.ItemSelected += (sender, e) => {
+                var task = (Task)e.SelectedItem;
+                var taskPage = new TaskPage(task.ID);
+                taskPage.BindingContext = task;
+                Navigation.PushAsync(taskPage);
             };
             Content = new StackLayout
             {

@@ -16,9 +16,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ItemCell.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ListingPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListingTasks.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ListaEditPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListaCreatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\TaskPage.cs" />
   </ItemGroup>
   <ItemGroup>

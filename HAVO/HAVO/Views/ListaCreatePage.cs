@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace HAVO.Views
 {
-    public class ListaEditPage : ContentPage
+    public class ListaCreatePage : ContentPage
     {
-        public ListaEditPage()
+        public ListaCreatePage()
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
 
@@ -57,11 +57,11 @@ namespace HAVO.Views
             createTaskButton.Clicked += (sender, e) =>
             {
                 var lista = (Lista)BindingContext;
-                var listaTaskPage = new ListingPage<Lista>(0);
+                var listingPage = new ListingTasks(0);
                 lista.Created = DateTime.Now;
                 App.Database.SaveLista(lista);
-                listaTaskPage.BindingContext = lista;
-                Navigation.PushAsync(listaTaskPage);
+                listingPage.BindingContext = lista;
+                Navigation.PushAsync(listingPage);
             };
 
             var cancelButton = new Button { Text = "Cancel" };
