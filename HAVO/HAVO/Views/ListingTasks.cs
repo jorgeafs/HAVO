@@ -50,7 +50,7 @@ namespace HAVO.Views
             {
                 tbi = new ToolbarItem("+", null, () =>
                 {
-                    var lista = new Lista();
+                    var lista = App.Database.getLista(idLista);
                     var taskPage = new TaskCreationPage(lista.ID);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
@@ -59,7 +59,7 @@ namespace HAVO.Views
             { // BUG: Android doesn't support the icon being null
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
-                    var lista = new Lista();
+                    var lista = App.Database.getLista(idLista);
                     var taskPage = new TaskCreationPage(lista.ID);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
@@ -69,7 +69,7 @@ namespace HAVO.Views
             {
                 tbi = new ToolbarItem("Add", "add.png", () =>
                 {
-                    var lista = new Lista();
+                    var lista = App.Database.getLista(idLista);
                     var taskPage = new TaskCreationPage(lista.ID);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
