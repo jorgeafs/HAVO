@@ -9,7 +9,7 @@ namespace HAVO.Views
 {
     public class TaskCreationPage : ContentPage
     {
-        public TaskCreationPage(int listaID)
+        public TaskCreationPage(int listaID, int taskID)
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
 
@@ -52,7 +52,7 @@ namespace HAVO.Views
             };
 
             var deleteButton = new Button { Text = "Delete" };
-            deleteButton.IsEnabled = listaID == -1 ? false : true;
+            deleteButton.IsEnabled = taskID == 0 ? false : true;
             deleteButton.Clicked += (sender, e) =>
             {
                 var task = (Task)BindingContext;

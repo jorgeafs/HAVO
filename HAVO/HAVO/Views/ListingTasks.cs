@@ -11,7 +11,7 @@ namespace HAVO.Views
     {
         ListView listView;
         int idLista;
-        public ListingTasks(int listaId)
+        public ListingTasks(int listaId, Boolean enableTaskEvaluation)
         {
             Title = "Showing Tasks";
 
@@ -25,10 +25,22 @@ namespace HAVO.Views
 
             listView.ItemSelected += (sender, e) => {
                 var task = (Task)e.SelectedItem;
-                var taskPage = new TaskCreationPage(task.ID);
-                taskPage.BindingContext = task;
-                Navigation.PushAsync(taskPage);
+                if (enableTaskEvaluation)
+                {
+                   NavigateToTaskEvaluationPage(task);
+                } else
+                {
+                    NavigateToTaskCreationPage(task);
+                }
             };
+
+            var borrarLista = new Button { Text = "Delete List" };
+            borrarLista.Clicked += (sender, e) =>
+            {
+                App.Database.DeleteLista(listaId);
+                Navigation.PopAsync();
+            };
+            borrarLista.IsEnabled = enableTaskEvaluation;
 
             var layout = new StackLayout();
             if (Device.OS == TargetPlatform.WinPhone)
@@ -41,6 +53,7 @@ namespace HAVO.Views
                 });
             }
             layout.Children.Add(listView);
+            layout.Children.Add(borrarLista);
             layout.VerticalOptions = LayoutOptions.FillAndExpand;
             Content = layout;
 
@@ -51,7 +64,7 @@ namespace HAVO.Views
                 tbi = new ToolbarItem("+", null, () =>
                 {
                     var lista = App.Database.getLista(idLista);
-                    var taskPage = new TaskCreationPage(lista.ID);
+                    var taskPage = new TaskCreationPage(lista.ID,0);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
             }
@@ -60,7 +73,7 @@ namespace HAVO.Views
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
                     var lista = App.Database.getLista(idLista);
-                    var taskPage = new TaskCreationPage(lista.ID);
+                    var taskPage = new TaskCreationPage(lista.ID,0);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
             }
@@ -70,13 +83,28 @@ namespace HAVO.Views
                 tbi = new ToolbarItem("Add", "add.png", () =>
                 {
                     var lista = App.Database.getLista(idLista);
-                    var taskPage = new TaskCreationPage(lista.ID);
+                    var taskPage = new TaskCreationPage(lista.ID,0);
                     Navigation.PushAsync(taskPage);
                 }, 0, 0);
             }
 
             ToolbarItems.Add(tbi);
         }
+
+        private void NavigateToTaskEvaluationPage(Task task)
+        {
+            var taskPage = new TaskEvaluationPage(task.ID);
+            taskPage.BindingContext = task;
+            Navigation.PushAsync(taskPage);
+        }
+
+        private void NavigateToTaskCreationPage(Task task)
+        {
+            var taskPage = new TaskCreationPage(task.ListID, task.ID);
+            taskPage.BindingContext = task;
+            Navigation.PushAsync(taskPage);
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

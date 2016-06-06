@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListaCreatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\TaskCreationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TaskEvaluationPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />

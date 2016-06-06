@@ -62,7 +62,7 @@ namespace HAVO.Views
                 lista.Created = DateTime.Now;
                 App.Database.SaveLista(lista);
                 lista = (from listas in App.Database.getListas() select listas).LastOrDefault<Lista>();
-                var listingPage = new ListingTasks(lista.ID);
+                var listingPage = new ListingTasks(lista.ID,false);
                 listingPage.BindingContext = lista;
                 Navigation.PushAsync(listingPage);
             };

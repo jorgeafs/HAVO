@@ -13,9 +13,9 @@ namespace HAVO.Views
 	{
 		public MainView ()
 		{
-            String title = "Menu Principal";
-            String listaNueva = "Nueva lista";
-            String listaCargar = "Cargar lista";
+            String title = "Main Menu";
+            String listaNueva = "New List";
+            String listaCargar = "Select List";
             //String exit = "Salir";
 
             this.SetBinding(ContentPage.TitleProperty, title);

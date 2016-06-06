@@ -25,7 +25,7 @@ namespace HAVO.Views
             listView.ItemSelected += (sender, e) =>
             {
                 var lista = (Lista)e.SelectedItem;
-                var taskListing = new ListingTasks(lista.ID);
+                var taskListing = new ListingTasks(lista.ID,true);
                 Navigation.PushAsync(taskListing);
             };
 
@@ -78,21 +78,7 @@ namespace HAVO.Views
 
             ToolbarItems.Add(tbi);
 
-            //if (Device.OS == TargetPlatform.iOS)
-            //{
-            //    var tbi2 = new ToolbarItem("?", null, () =>
-            //    {
-            //        var todos = App.Database.GetItemsNotDone();
-            //        var tospeak = "";
-            //        foreach (var t in todos)
-            //            tospeak += t.Name + " ";
-            //        if (tospeak == "")
-            //            tospeak = "there are no tasks to do";
-
-            //        DependencyService.Get<ITextToSpeech>().Speak(tospeak);
-            //    }, 0, 0);
-            //    ToolbarItems.Add(tbi2);
-            //}
+           
         }
 
         protected override void OnAppearing()
