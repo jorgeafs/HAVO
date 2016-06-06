@@ -39,29 +39,29 @@ namespace HAVO.Data
         public DatabaseHAVO()
         {
             database = new SQLiteConnection(DatabasePath, true);
-            database.CreateTable<Check>();
+            database.CreateTable<Evaluation>();
             database.CreateTable<Task>();
             database.CreateTable<Lista>();
             database.CreateTable<User>();
         }
 
-        public IEnumerable<Check> getCheckeds()
+        public IEnumerable<Evaluation> getCheckeds()
         {
             lock (locker)
             {
-                return (from check in database.Table<Check>() select check).ToList();
+                return (from check in database.Table<Evaluation>() select check).ToList();
             }
         }
 
-        public Check getChecked (int id)
+        public Evaluation getChecked (int id)
         {
             lock (locker)
             {
-                return database.Table<Check>().FirstOrDefault(x => x.ID == id);
+                return database.Table<Evaluation>().FirstOrDefault(x => x.ID == id);
             }
         }
 
-        public int SaveCheck(Check check)
+        public int SaveCheck(Evaluation check)
         {
             lock (locker)
             {
@@ -81,7 +81,7 @@ namespace HAVO.Data
         {
             lock (locker)
             {
-                return database.Delete<Check>(id);
+                return database.Delete<Evaluation>(id);
             }
         }
 

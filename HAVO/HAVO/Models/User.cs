@@ -14,6 +14,5 @@ namespace HAVO.Models
         public String Name { get; set; }
         public String LastName { get; set; }
         public String Position { get; set; }
-
     }
 }

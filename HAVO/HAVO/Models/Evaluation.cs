@@ -3,9 +3,9 @@ using SQLite;
 
 namespace HAVO.Models
 {
-    public class Check
+    public class Evaluation
     {
-        public Check()
+        public Evaluation()
         {
         }
 
