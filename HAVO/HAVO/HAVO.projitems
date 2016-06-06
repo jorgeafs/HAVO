@@ -11,7 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\DatabaseHAVO.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Check.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Evaluation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lista.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
