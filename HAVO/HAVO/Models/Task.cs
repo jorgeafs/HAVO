@@ -17,5 +17,6 @@ namespace HAVO.Models
         public String Detail { get; set; }
         public String Criteria { get; set; }
         public String Placement { get; set; }
+        public Boolean isDone { get; set; }
     }
 }
