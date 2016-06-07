@@ -41,6 +41,8 @@ namespace HAVO.Views
                 evaluation.UserID = -1; ///While there are no user
                 evaluation.TaskID = task.ID;
                 evaluation.DateChecked = DateTime.Now;
+                task.isDone = done.IsToggled;
+                App.Database.SaveTask(task);
                 App.Database.SaveCheck(evaluation);
                 Navigation.PopAsync();
             };

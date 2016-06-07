@@ -47,6 +47,7 @@ namespace HAVO.Views
                 task.ListID = listaID;
                 task.Placement = placementEntry.Text;
                 task.Title = titleEntry.Text;
+                task.isDone = false;
                 App.Database.SaveTask(task);
                 Navigation.PopAsync();
             };
