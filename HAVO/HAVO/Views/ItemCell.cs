@@ -36,7 +36,7 @@ namespace HAVO.Views
 
             var layout = new StackLayout
             {
-                Padding = new Thickness(20, 0, 20, 0),
+                Padding = new Thickness(19, 0, 19, 0),
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
                 Children = { title, detail, tick }
