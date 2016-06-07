@@ -13,12 +13,14 @@ namespace HAVO.Views
 	{
 		public MainView ()
 		{
-            String title = "Main Menu";
+            String title = "H.A.V.O. Main Menu";
             String listaNueva = "New List";
             String listaCargar = "Select List";
             //String exit = "Salir";
 
             this.SetBinding(ContentPage.TitleProperty, title);
+
+            Title = title;
 
             var nuevaLista = new Button { Text = listaNueva };
             nuevaLista.Clicked += (sender, e) =>

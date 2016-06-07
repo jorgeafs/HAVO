@@ -9,13 +9,11 @@ namespace HAVO.Views
 {
 	public class TaskEvaluationPage : ContentPage
 	{
-        int idTask;
-        Task task;
-		public TaskEvaluationPage (int taskID)
+		public TaskEvaluationPage (Task task)
 		{
-            idTask = taskID;
+            Title = "Task Evaluation";
             Evaluation evaluation = new Evaluation();
-
+            
             var titleLabel = new Label { Text = "Title" };
             var title = new Label { Text = task.Title };
 
@@ -42,7 +40,7 @@ namespace HAVO.Views
             {
                 evaluation = (Evaluation)BindingContext;
                 evaluation.UserID = -1; ///While there are no user
-                evaluation.TaskID = taskID;
+                evaluation.TaskID = task.ID;
                 evaluation.DateChecked = DateTime.Now;
                 App.Database.SaveCheck(evaluation);
                 Navigation.PopAsync();
@@ -124,10 +122,5 @@ namespace HAVO.Views
 				}
 			};
 		}
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            task = App.Database.getTask(idTask);
-        }
     }
 }

@@ -11,8 +11,10 @@ namespace HAVO.Views
     {
         ListView listView;
         int idLista;
+        Boolean isEnableTaskEvaluation;
         public ListingTasks(int listaId, Boolean enableTaskEvaluation)
         {
+            isEnableTaskEvaluation = enableTaskEvaluation;
             Title = "Showing Tasks";
 
             NavigationPage.SetHasNavigationBar(this, true);
@@ -93,8 +95,7 @@ namespace HAVO.Views
 
         private void NavigateToTaskEvaluationPage(Task task)
         {
-            var taskPage = new TaskEvaluationPage(task.ID);
-            taskPage.BindingContext = task;
+            var taskPage = new TaskEvaluationPage(task);
             Navigation.PushAsync(taskPage);
         }
 
