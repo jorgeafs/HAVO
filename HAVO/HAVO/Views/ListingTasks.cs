@@ -24,7 +24,8 @@ namespace HAVO.Views
                 RowHeight = 40,
                 ItemTemplate = new DataTemplate(typeof(ItemCell))
             };
-
+            listView.SeparatorVisibility = SeparatorVisibility.Default;
+            listView.SeparatorColor = Color.White;
             listView.ItemSelected += (sender, e) => {
                 var task = (Task)e.SelectedItem;
                 if (enableTaskEvaluation)

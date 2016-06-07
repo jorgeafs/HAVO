@@ -22,6 +22,8 @@ namespace HAVO.Views
                 ItemTemplate = new DataTemplate(typeof(ItemCell))
             };
 
+            listView.SeparatorVisibility = SeparatorVisibility.Default;
+            listView.SeparatorColor = Color.White;
             listView.ItemSelected += (sender, e) =>
             {
                 var lista = (Lista)e.SelectedItem;

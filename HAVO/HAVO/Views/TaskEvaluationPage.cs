@@ -28,17 +28,16 @@ namespace HAVO.Views
 
             var doneLabel = new Label { Text = "Done" };
             var done = new Switch();
-            done.SetBinding(Switch.IsToggledProperty, "Done");
 
             var commentsLabel = new Label { Text = "Comments" };
             var commentEntry = new Entry();
-            commentEntry.SetBinding(Entry.TextProperty, "Comments");
 
             var saveButton = new Button { Text = "Save" };
             saveButton.IsEnabled = true;
             saveButton.Clicked += (sender, e) =>
             {
-                evaluation = (Evaluation)BindingContext;
+                evaluation.Done = done.IsToggled;
+                evaluation.Comments = commentEntry.Text;
                 evaluation.UserID = -1; ///While there are no user
                 evaluation.TaskID = task.ID;
                 evaluation.DateChecked = DateTime.Now;
@@ -55,8 +54,9 @@ namespace HAVO.Views
 
             var titleStack = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Padding = new Thickness(20),
+                Padding = new Thickness(10),
                 Children =
                 {
                     titleLabel,
@@ -66,8 +66,9 @@ namespace HAVO.Views
 
             var detailStack = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Padding = new Thickness(20),
+                Padding = new Thickness(10),
                 Children =
                 {
                     detailLabel,
@@ -77,8 +78,9 @@ namespace HAVO.Views
 
             var placementStack = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Padding = new Thickness(20),
+                Padding = new Thickness(10),
                 Children =
                 {
                     placementLabel,
@@ -88,8 +90,9 @@ namespace HAVO.Views
 
             var criteriaStack = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Padding = new Thickness(20),
+                Padding = new Thickness(10),
                 Children =
                 {
                     criteriaLabel,
@@ -99,8 +102,9 @@ namespace HAVO.Views
 
             var buttonStack = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
-                Padding = new Thickness(20),
+                Padding = new Thickness(10),
                 Children =
                 {
                     saveButton,
