@@ -12,7 +12,7 @@ namespace HAVO.Views
         public TaskCreationPage(int listaID, int taskID)
         {
             this.SetBinding(ContentPage.TitleProperty, "Task");
-
+            Title = "Task Creation Page";
             NavigationPage.SetHasNavigationBar(this, true);
 
             var saveButton = new Button { Text = "Save" };
