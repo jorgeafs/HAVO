@@ -63,17 +63,19 @@ namespace HAVO.Data
 
         public int SaveCheck(Evaluation check)
         {
+            int id;
             lock (locker)
             {
                 if (check.ID != 0)
                 {
                     database.Update(check);
-                    return check.ID;
+                    id = check.ID;
                 }
                 else
                 {
-                    return database.Insert(check);
+                    id =  database.Insert(check);
                 }
+                return id;
             }
         }
 
@@ -102,17 +104,19 @@ namespace HAVO.Data
         }
         public int SaveTask(Task task)
         {
+            int id;
             lock (locker)
             {
                 if (task.ID != 0)
                 {
                     database.Update(task);
-                    return task.ID;
+                    id = task.ID;
                 }
                 else
                 {
-                    return database.Insert(task);
+                    id = database.Insert(task);
                 }
+                return id;
             }
         }
 
@@ -142,17 +146,19 @@ namespace HAVO.Data
 
         public int SaveLista(Lista lista)
         {
+            int id;
             lock (locker)
             {
                 if (lista.ID != 0)
                 {
                     database.Update(lista);
-                    return lista.ID;
+                    id = lista.ID;
                 }
                 else
                 {
-                    return database.Insert(lista);
+                    id = database.Insert(lista);
                 }
+                return id;
             }
         }
 
@@ -182,17 +188,19 @@ namespace HAVO.Data
 
         public int SaveUser(User user)
         {
+            int id;
             lock (locker)
             {
                 if (user.ID != 0)
                 {
                     database.Update(user);
-                    return user.ID;
+                    id = user.ID;
                 }
                 else
                 {
-                    return database.Insert(user);
+                    id = database.Insert(user);
                 }
+                return id;
             }
         }
 
