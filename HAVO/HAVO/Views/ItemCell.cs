@@ -32,7 +32,7 @@ namespace HAVO.Views
                 HorizontalOptions = LayoutOptions.End
             };
 
-            tick.SetBinding(Image.IsVisibleProperty, "isDone");
+            tick.SetBinding(Image.IsVisibleProperty, "isEvaluatedCorrectlyDone");
 
             var layout = new StackLayout
             {

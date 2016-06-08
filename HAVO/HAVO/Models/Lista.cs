@@ -16,7 +16,6 @@ namespace HAVO.Models
         public String Detail { get; set; }
         public String Project { get; set; }
         public String Address { get; set; }
-        public String BIM { get; set; }
         public DateTime Created { get; set; }
     }
 }

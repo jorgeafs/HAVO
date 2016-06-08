@@ -36,12 +36,12 @@ namespace HAVO.Views
             saveButton.IsEnabled = true;
             saveButton.Clicked += (sender, e) =>
             {
-                evaluation.Done = done.IsToggled;
+                evaluation.isCorrectlyDone = done.IsToggled;
                 evaluation.Comments = commentEntry.Text;
                 evaluation.UserID = -1; ///While there are no user
                 evaluation.TaskID = task.ID;
                 evaluation.DateChecked = DateTime.Now;
-                task.isDone = done.IsToggled;
+                task.isEvaluatedCorrectlyDone = done.IsToggled;
                 App.Database.SaveTask(task);
                 App.Database.SaveCheck(evaluation);
                 Navigation.PopAsync();
