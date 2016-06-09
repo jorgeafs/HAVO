@@ -16,7 +16,7 @@ namespace HAVO.Views
             String title = "H.A.V.O. Main Menu";
             String listaNueva = "New List";
             String listaCargar = "Select List";
-            //String exit = "Salir";
+            String documento = "Create document";
 
             this.SetBinding(ContentPage.TitleProperty, title);
 
@@ -41,12 +41,19 @@ namespace HAVO.Views
                 Navigation.PushAsync(listingListas);
             };
 
+            var crearDocumento = new Button { Text = documento };
+            crearDocumento.Clicked += (sender, e) =>
+            {
+                DisplayAlert("There is a problem","This part of the app is still pending, sorry","OK");
+            };
+
             Content = new StackLayout {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Padding = new Thickness(20),
                 Children = {
                     nuevaLista,
-                    cargarListas
+                    cargarListas,
+                    crearDocumento
                 }
 			};
 		}
